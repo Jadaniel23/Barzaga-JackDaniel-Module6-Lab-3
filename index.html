@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <title>IT Seminar Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="intro">
+      <p class="eyebrow">UNIVERSITY OF DAGUPAN · SCHOOL OF INFORMATION TECHNOLOGY EDUCATION</p>
+      <h1>IT Seminar Registration</h1>
+      <p class="intro-copy">Complete the form to validate your student details and reserve your place at the upcoming seminar.</p>
+    </header>
+
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">STUDENT DETAILS</p>
+          <h2 id="form-title">Registration form</h2>
+        </div>
+        <span class="required-note"><span aria-hidden="true">*</span> Required</span>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        <div class="field-grid">
+          <div class="field field-wide">
+            <label for="fullName">Full name <span aria-hidden="true">*</span></label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="fullNameError" aria-invalid="false" placeholder="e.g. Alex Santos">
+            <p class="field-error" id="fullNameError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="studentNumber">Student number <span aria-hidden="true">*</span></label>
+            <input id="studentNumber" name="studentNumber" type="text" required aria-describedby="studentNumberError" aria-invalid="false" placeholder="24-1234-123">
+            <p class="field-hint">Format: 24-1234-123</p>
+            <p class="field-error" id="studentNumberError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email address <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="emailError" aria-invalid="false" placeholder="you@example.edu">
+            <p class="field-error" id="emailError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="mobileNumber">Mobile number <span aria-hidden="true">*</span></label>
+            <input id="mobileNumber" name="mobileNumber" type="tel" autocomplete="tel" required aria-describedby="mobileNumberError" aria-invalid="false" placeholder="09171234567">
+            <p class="field-hint">Use 09XXXXXXXXX or +639XXXXXXXXX</p>
+            <p class="field-error" id="mobileNumberError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="course">Course <span aria-hidden="true">*</span></label>
+            <select id="course" name="course" required aria-describedby="courseError" aria-invalid="false">
+              <option value="">Select your course</option>
+              <option value="BSIT">BSIT</option>
+              <option value="BSCS">BSCS</option>
+            </select>
+            <p class="field-error" id="courseError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="password">Password <span aria-hidden="true">*</span></label>
+            <input id="password" name="password" type="password" autocomplete="new-password" required aria-describedby="passwordError passwordFeedback" aria-invalid="false" placeholder="Create a password">
+            <p class="field-hint">8+ characters, uppercase, number, and @, $ or !</p>
+            <p class="password-feedback" id="passwordFeedback" aria-live="polite"></p>
+            <p class="field-error" id="passwordError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirm password <span aria-hidden="true">*</span></label>
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required aria-describedby="confirmPasswordError" aria-invalid="false" placeholder="Re-enter your password">
+            <p class="field-error" id="confirmPasswordError" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="terms-row">
+          <input id="terms" name="terms" type="checkbox" required aria-describedby="termsError" aria-invalid="false">
+          <div>
+            <label for="terms">I confirm that the information above is accurate. <span aria-hidden="true">*</span></label>
+            <p class="field-error" id="termsError" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="button button-primary" id="registerBtn" type="submit">Validate registration <span aria-hidden="true">→</span></button>
+          <button class="button button-secondary" id="resetBtn" type="reset">Reset form</button>
+        </div>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <p class="success-message" id="successMessage"></p>
+        <div class="summary" id="registrationSummary" hidden>
+          <div class="summary-heading">
+            <div><p class="section-kicker">CONFIRMATION</p><h2>Registration summary</h2></div>
+            <span class="status-mark" aria-hidden="true">✓</span>
+          </div>
+          <dl class="summary-list">
+            <div><dt>Full name</dt><dd id="summaryName"></dd></div>
+            <div><dt>Student number</dt><dd id="summaryStudentNumber"></dd></div>
+            <div><dt>Email address</dt><dd id="summaryEmail"></dd></div>
+            <div><dt>Mobile number</dt><dd id="summaryMobileNumber"></dd></div>
+            <div><dt>Course</dt><dd id="summaryCourse"></dd></div>
+          </dl>
+        </div>
+      </section>
+    </section>
+    <footer>ITP10 · Event-Driven Programming <span>Module 6 Laboratory Activity</span></footer>
+  </main>
+</body>
+</html>
